@@ -2,44 +2,19 @@
  * Created by yogprakash on 6/5/17.
  */
 import {createAction} from "redux-actions";
-// import ip from "icepick";
- //import Services from "./service";
 import {
-  //  TEKION_GET_GRAPH_CONFIG_REQUEST,
-    TEKION_GET_GRAPH_CONFIG_SUCCESS,
-  //  TEKION_GET_GRAPH_CONFIG_FAILURE,
-    TEKION_SET_GRAPH_CONFIG,
-    // TEKION_SET_GRAPH_CONFIG_SUCCESS,
-    // TEKION_SET_GRAPH_CONFIG_REQUEST
+    GET_GRAPH_CONFIG_SUCCESS,
+    SET_GRAPH_CONFIG,
 } from "./constants";
-import data from "./grapgData"
+import data from "./graphData"
 
-//const getGraphConfigRequest = createAction(TEKION_GET_GRAPH_CONFIG_REQUEST);
-const getGraphConfigSuccess = createAction(TEKION_GET_GRAPH_CONFIG_SUCCESS);
-//const getGraphConfigFailure = createAction(TEKION_GET_GRAPH_CONFIG_FAILURE);
+const getGraphConfigSuccess = createAction(GET_GRAPH_CONFIG_SUCCESS);
 
-export const setGraphConfig = createAction(TEKION_SET_GRAPH_CONFIG);
-// const setGraphConfigSuccess = createAction(TEKION_SET_GRAPH_CONFIG_SUCCESS);
-// const setGraphConfigFailure = createAction(TTEKION_SET_GRAPH_CONFIG_FAILURE);
-
-// export function setGraphConfig(value) {
-//     return (async(dispatch) => {
-//         value = ip.freeze(value);
-//         data =
-//         dispatch(setGraphConfigRequest());
-//         const { response} = await Services.setGraphConfig(config, graphData);
-//         if (response) {
-//             dispatch(setGraphConfigSuccess(response));
-//         }
-//         if (error) {
-//             dispatch(setGraphConfigFailure(error));
-//         }
-//     });
-// }
+export const setGraphConfig = createAction(SET_GRAPH_CONFIG);
 
 export function getGraphConfig(jobTitle) {
     return ((dispatch) => {
-        const response =data[jobTitle]
+        const response = data[jobTitle]
         if (response) {
             dispatch(getGraphConfigSuccess(response));
         }

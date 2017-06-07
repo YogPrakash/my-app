@@ -35,11 +35,11 @@ const store = createStore(
     Reducer,
     applyMiddleware(thunk)
 );
-    ReactDOM.render(
-        <MuiThemeProvider muiTheme={muiTheme}>
-            <Provider store={store}>
-                <App />
-            </Provider>
-        </MuiThemeProvider>, document.getElementById('root'));
+ReactDOM.render(
+    <MuiThemeProvider muiTheme={muiTheme}>
+        <Provider store={store}>
+            <App />
+        </Provider>
+    </MuiThemeProvider>, document.getElementById('root'));
 
 registerServiceWorker();

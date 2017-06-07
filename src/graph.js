@@ -8,9 +8,9 @@ import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import "./graph.css";
 
-class Graph extends React.Component  {
+class Graph extends React.Component {
     componentWillReceiveProps(nextProps) {
-        if (nextProps.value !== this.props.value){
+        if (nextProps.value !== this.props.value) {
             this.props.getGraphConfig(nextProps.value);
         }
     }
@@ -18,9 +18,11 @@ class Graph extends React.Component  {
     handleChange = (event, index, value) => {
         this.props.setGraphConfig(value)
     };
-    componentDidMount(){
+
+    componentDidMount() {
         this.props.getGraphConfig(this.props.value);
     }
+
     render() {
         const {graphData} =this.props;
         return (
@@ -32,7 +34,8 @@ class Graph extends React.Component  {
                 </DropDownMenu>
                 {  graphData && graphData.map((data) => {
                     return (
-                        <div className="flex-container" key={data.viewPort} style={{width: data.width, height: data.height}} >
+                        <div className="flex-container" key={data.viewPort}
+                             style={{width: data.width, height: data.height}}>
                             {data.jobTitle}
                         </div>
                     )
@@ -44,8 +47,8 @@ class Graph extends React.Component  {
 
 const mapStateToProps = (state) => {
     return {
-        value : state.value,
-        graphData:state.graphData
+        value: state.value,
+        graphData: state.graphData
     };
 };
 

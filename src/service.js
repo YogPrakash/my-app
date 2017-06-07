@@ -1,7 +1,7 @@
 /**
  * Created by yogprakash on 6/5/17.
  */
-import graphData from "./grapgData"
+import graphData from "./graphData"
 
 const TIMEOUT = 100;
 
